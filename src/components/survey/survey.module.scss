@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-color: black;
+    border-radius: 10%;
+    border: 2px;
+    border-style:solid;
+    width: 80%;
+    background-color: rgb(54, 130, 104);
+    margin-bottom: 3rem;
+    padding: 1rem;
+
+}
+.header{
+    color: white;
+    font-weight: 3em;
+}
+
+.br{
+    border-width: 3px;
+    width: 50%;
+    border-style: dotted;
+    border-color: rgb(90, 85, 85);
+    border-top: none;
+    margin: 2rem;
+
+
+}

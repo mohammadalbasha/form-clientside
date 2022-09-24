@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 80%;
+    
+}
+.br{
+    border-width: 6px;
+    width: 50%;
+    border-style: dotted;
+    border-color: black;
+    border-top: none;
+
+
+}
