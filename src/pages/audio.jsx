@@ -37,7 +37,7 @@ const submitHandler = (event) => {
       setSuccessMessage(response);    
     }
 
-    let url ="http://localhost:8000/audios";
+    let url ="https://form-serverside.vercel.app/audios";
       addTrack(
         {url ,
         method : 'POST',
@@ -64,7 +64,7 @@ const submitHandler = (event) => {
                {
                 tracks?.map((t, i) => {
                   return (
-                    <option onClick={() => {setTrackUrl(`http://localhost:8000/audios/${t._id}`)}} value={t}>{t.filename}</option>
+                    <option onClick={() => {setTrackUrl(`https://form-serverside.vercel.app/audios/${t._id}`)}} value={t}>{t.filename}</option>
                   )
                 })
                }
