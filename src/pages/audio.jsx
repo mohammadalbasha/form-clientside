@@ -24,6 +24,10 @@ const AudioPage = () => {
     const trackHandler = (e) => {        
         setTrack(e.target.files[0])
 }
+    
+    useEffect(() => {
+    console.log(track_url);
+    }, [track_url]);
 
 
 
