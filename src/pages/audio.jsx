@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import * as ReactDOM from 'react-dom';
 import { useEffect } from "react";
 import useHttp from "../hooks/use-http";
 import classes from './audio.module.scss'
@@ -26,6 +27,8 @@ const AudioPage = () => {
 }
     
     useEffect(() => {
+    console.log(track_url);
+
     const elementRef = ReactDOM.findDOMNode(this);
     const audioRef= elementRef.querySelector('audio');
     const sourceRef = audioRef.querySelector('source');
@@ -33,7 +36,6 @@ const AudioPage = () => {
         sourceRef.src = track_url;
         audioRef.load();
 
-    console.log(track_url);
     }, [track_url]);
 
 
