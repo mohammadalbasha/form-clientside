@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import  ReactDOM from 'react-dom';
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import useHttp from "../hooks/use-http";
 import classes from './audio.module.scss'
 
@@ -10,7 +10,8 @@ const AudioPage = () => {
     const [track, setTrack] = useState();
     const [tracks, setTracks] = useState([]);
     const [successUploadMessage, setSuccessMessage] = useState();
-
+    const audioRef = useRef();
+    
     const {error : fetchingError, sendRequest: fetchTracks} = useHttp();
     const {error: addingError, sendRequest: addTrack } = useHttp();
 
@@ -27,12 +28,11 @@ const AudioPage = () => {
 }
     
     useEffect(() => {
-    const element = ReactDOM.findDOMNode(this);
-    const audio= element.querySelector('audio');
-    const source = audio.querySelector('source');
-        
-        source.src = track_url;
-        audio.load();
+    if(audioRef.current){
+        audioRef.current.pause();
+        audioRef.current.load();
+        audioRef.current.play();
+    }
 
     }, [track_url]);
 
@@ -81,7 +81,7 @@ const submitHandler = (event) => {
                }
               </select>
              {/* {track_url && <audio controls ><source src={track_url}/></audio>} */}
-             <audio controls ><source src={track_url}/></audio>
+             <audio ref={audioRef} controls ><source src={track_url}/></audio>
         </div>
         <div className={`${classes.audio} ${classes.audio__add}`}>
     <form onSubmit={submitHandler}>
