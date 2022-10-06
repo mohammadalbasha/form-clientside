@@ -18,7 +18,7 @@ const Report = (props) => {
     const responseHandler = (data) => {
       setSurveys(data);
     }
-    const url = 'http://localhost:8000/surveys';
+    const url = 'https://form-serverside.vercel.app/surveys';
     getSurveys({ url }, responseHandler);
   }, []);
 
