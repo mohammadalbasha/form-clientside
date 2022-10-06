@@ -14,7 +14,7 @@ export const Form = () => {
 
    // console.log(info.ratings)
     axios
-      .post("http://localhost:8000/surveys", {
+      .post("https://form-serverside.vercel.app/surveys", {
         name: info.name,
         country: info.country,
         email: info.email,
