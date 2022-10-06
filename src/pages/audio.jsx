@@ -26,11 +26,17 @@ const AudioPage = () => {
 }
     
     useEffect(() => {
+    const elementRef = ReactDOM.findDOMNode(this);
+    const audioRef= elementRef.querySelector('audio');
+    const sourceRef = audioRef.querySelector('source');
+        
+        sourceRef.src = track_url;
+        audioRef.load();
+
     console.log(track_url);
     }, [track_url]);
 
 
-    alert(track_url);
 
 const submitHandler = (event) => {
     event.preventDefault();
