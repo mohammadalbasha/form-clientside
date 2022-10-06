@@ -5,7 +5,7 @@ import classes from './audio.module.scss'
 
 
 const AudioPage = () => {
-    const [track_url, setTrackUrl] = useState(`http://localhost:8000/audios/632ee4fb716fec2048ff514e`);
+    const [track_url, setTrackUrl] = useState(`https://form-serverside.vercel.app/audios/632ee4fb716fec2048ff514e`);
     const [track, setTrack] = useState();
     const [tracks, setTracks] = useState([]);
     const [successUploadMessage, setSuccessMessage] = useState();
@@ -17,7 +17,7 @@ const AudioPage = () => {
         const responseHandler = (data) => {
             setTracks(data);
         }
-        let url = `http://localhost:8000/audios`
+        let url = `https://form-serverside.vercel.app/audios`
         fetchTracks({url}, responseHandler);
     }, []);
 
