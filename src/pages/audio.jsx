@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import * as ReactDOM from 'react-dom';
+import  ReactDOM from 'react-dom';
 import { useEffect } from "react";
 import useHttp from "../hooks/use-http";
 import classes from './audio.module.scss'
